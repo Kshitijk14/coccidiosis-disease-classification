@@ -1,2 +1,1 @@
-# coccidiosis-disease-classification
- 
+# Chicken Disease (coccidiosis) Classification
