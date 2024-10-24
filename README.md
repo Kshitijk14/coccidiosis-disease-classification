@@ -11,3 +11,10 @@
 7. pipeline
 8. main.py
 9. dvc.yaml
+
+
+### Tensorboard cmd:
+
+```
+tensorboard --logdir artifacts/prepare_calbacks/tensorboard_log_dir/
+```
