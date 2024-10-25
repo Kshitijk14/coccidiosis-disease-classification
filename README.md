@@ -29,3 +29,23 @@ tensorboard --logdir artifacts/prepare_calbacks/tensorboard_log_dir/
 3. ```
    dvc dag
    ```
+
+### Flask App:
+
+Run app on local host:
+
+```
+py app.py
+```
+
+local host:
+
+```
+http://127.0.0.1:8080/
+```
+
+Train model through local host:
+
+```
+http://127.0.0.1:8080/train/
+```
