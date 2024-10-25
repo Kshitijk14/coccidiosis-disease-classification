@@ -26,3 +26,6 @@ tensorboard --logdir artifacts/prepare_calbacks/tensorboard_log_dir/
 2. ```
    dvc repro
    ```
+3. ```
+   dvc dag
+   ```
