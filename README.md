@@ -49,3 +49,21 @@ Train model through local host:
 ```
 http://127.0.0.1:8080/train/
 ```
+
+### Docker:
+
+1. ```
+   docker build -t kshitiijj/coccidiosis_classifier
+   ```
+2. ```
+   docker images
+   ```
+3. ```
+   docker run -p 8080:8080 kshitiijj/coccidiosis_classifier
+   ```
+4. ```
+   docker ps
+   ```
+5. ```
+   docker push kshitiijj/coccidiosis_classifier:latest
+   ```
