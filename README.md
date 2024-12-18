@@ -1,69 +1,98 @@
-# Chicken Disease (coccidiosis) Classification
+# Chicken Disease (Coccidiosis) Classification
 
-### Workflow Sequence:
+This project implements a deep learning model to classify chicken diseases, specifically focusing on coccidiosis detection through image analysis.
 
-1. config.yaml
-2. secrets.yaml*
-3. params.yaml
-4. entity
-5. configuration manager -> src config
-6. components
-7. pipeline
-8. main.py
-9. dvc.yaml
+## Features
 
-### Tensorboard cmd:
+- Deep learning-based classification of chicken diseases
+- Interactive web interface using Flask
+- Containerized application using Docker
+- MLOps integration with DVC (Data Version Control)
+- Real-time model monitoring with TensorBoard
 
+## Project Structure
+
+The project follows a modular and maintainable structure:
+
+1. `config.yaml` - Main configuration file
+2. `secrets.yaml` - Sensitive configuration (not tracked in git)*
+3. `params.yaml` - Model parameters and hyperparameters
+4. `entity/` - Core data entities and models
+5. `src/config/` - Configuration management
+6. `components/` - Reusable project components
+7. `pipeline/` - Data and training pipelines
+8. `main.py` - Application entry point
+9. `dvc.yaml` - DVC pipeline configuration
+
+## Installation and Setup
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
 ```
+
+## Usage
+
+### Training and Monitoring
+
+1. Start TensorBoard for monitoring:
+```bash
 tensorboard --logdir artifacts/prepare_calbacks/tensorboard_log_dir/
 ```
 
-### DVC:
+2. Use DVC for experiment tracking and pipeline management:
+```bash
+# Initialize DVC
+dvc init
 
-1. ```
-   dvc init
-   ```
-2. ```
-   dvc repro
-   ```
-3. ```
-   dvc dag
-   ```
+# Run the complete pipeline
+dvc repro
 
-### Flask App:
-
-Run app on local host:
-
-```
-py app.py
+# Visualize pipeline dependencies
+dvc dag
 ```
 
-local host:
+### Running the Application
 
-```
-http://127.0.0.1:8080/
-```
+#### Local Development
 
-Train model through local host:
-
-```
-http://127.0.0.1:8080/train/
+1. Start the Flask application:
+```bash
+python app.py
 ```
 
-### Docker:
+2. Access the application:
+- Main interface: `http://127.0.0.1:8080/`
+- Model training endpoint: `http://127.0.0.1:8080/train/`
 
-1. ```
-   docker build -t kshitiijj/coccidiosis_classifier
-   ```
-2. ```
-   docker images
-   ```
-3. ```
-   docker run -p 8080:8080 kshitiijj/coccidiosis_classifier
-   ```
-4. ```
-   docker ps
-   ```
-5. ```
-   docker push kshitiijj/coccidiosis_classifier:latest
-   ```
+#### Docker Deployment
+
+1. Build the Docker image:
+```bash
+docker build -t kshitiijj/coccidiosis_classifier .
+```
+
+2. View available images:
+```bash
+docker images
+```
+
+3. Run the container:
+```bash
+docker run -p 8080:8080 kshitiijj/coccidiosis_classifier
+```
+
+4. View running containers:
+```bash
+docker ps
+```
+
+5. Push to Docker Hub:
+```bash
+docker push kshitiijj/coccidiosis_classifier:latest
+```
+
+## Contributing
+
+Feel free to open issues and pull requests for improvements (especially for the model architecture).
